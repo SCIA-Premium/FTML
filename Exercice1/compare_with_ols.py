@@ -1,3 +1,4 @@
+from cgi import test
 import os
 import numpy as np
 from sklearn.model_selection import train_test_split
@@ -124,7 +125,7 @@ def ols_risk(n, d, n_tests, plot=True):
 
     """
     # design matrix
-    X = np.array([[r.choice([2, 4, 6]) for _ in range(n)] for _ in range(d)])
+    X = np.array([[r.choice([2, 4, 6]) for _ in range(d)] for _ in range(n)])
     # Different design matrix
     # X = np.load("data/design_matrix.npy")
     # n, d = X.shape
@@ -152,14 +153,16 @@ def ols_risk(n, d, n_tests, plot=True):
         # compute and store test error
         test_errors.append(error(theta_hat, X_test, Y_test))
         # store the distance between the OLS estimator and theta_star
-        distances_to_theta_star.append(
-            distance_to_theta_star(theta_hat, theta_star))
-        estimators[:, i] = theta_hat.reshape(d)
+        print(theta_hat)
+        print(X)
+        # distances_to_theta_star.append(
+        #    distance_to_theta_star(theta_hat, theta_star))
+        #estimators[:, i] = theta_hat.reshape(d)
     # average test errors to have an etimation of the risk
     risk_estimation = sum(test_errors)/n_tests
-    mean_estimator = np.mean(estimators, axis=1).reshape(d, 1)
-    distance_mean_estimator = distance_to_theta_star(
-        mean_estimator, theta_star)
+    #mean_estimator = np.mean(estimators, axis=1).reshape(d, 1)
+    #distance_mean_estimator = distance_to_theta_star(
+    #    mean_estimator, theta_star)
 
     # Plot some results
     if plot == True:
@@ -180,19 +183,19 @@ def ols_risk(n, d, n_tests, plot=True):
         plt.close()
 
         # plot distance to theta_star
-        plt.plot(range(n_tests), distances_to_theta_star, "o",
-                 label=r"$\frac{||\hat{\theta}-\theta^*||}{||\theta^*||}$", markersize=3, alpha=0.6)
-        plt.xlabel("test index")
-        plt.xticks(range(1, n_tests, int(n_tests/10)))
-        plt.legend(loc="best")
-        title = (r"$\frac{||<\hat{\theta}>-\theta^*||}{||\theta^*||}=$"
-                 f"{distance_mean_estimator:.3E}"
-                 f"\nn={n}, d={d}"
-                 )
-        plt.title(title)
-        plt.tight_layout()
-        plt.savefig(f"images_ols/variation_n={n}_d={d}.pdf")
-        plt.close()
+        #plt.plot(range(n_tests), distances_to_theta_star, "o",
+        #         label=r"$\frac{||\hat{\theta}-\theta^*||}{||\theta^*||}$", markersize=3, alpha=0.6)
+        #plt.xlabel("test index")
+        #plt.xticks(range(1, n_tests, int(n_tests/10)))
+        #plt.legend(loc="best")
+        #title = (r"$\frac{||<\hat{\theta}>-\theta^*||}{||\theta^*||}=$"
+        #         f"{distance_mean_estimator:.3E}"
+        #         f"\nn={n}, d={d}"
+        #         )
+        #plt.title(title)
+        #plt.tight_layout()
+        #plt.savefig(f"images_ols/variation_n={n}_d={d}.pdf")
+        #plt.close()
 
     return risk_estimation
 
@@ -204,10 +207,10 @@ d_list = [2, 5, 10, 20]
 d_list = [10]
 
 # amount of noise (linear model, fixed design)
-bayes_risk = 3/10 
+bayes_risk = 3/10
 
 # use a seed to have consistent resutls
-r = np.random.RandomState(4)
+r = np.random.RandomState(42)
 
 # Different design matrix
 # X = np.load("data/design_matrix.npy")
