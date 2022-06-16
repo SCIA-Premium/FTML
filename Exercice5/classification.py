@@ -53,4 +53,5 @@ for i, classifier in enumerate(classification_scores.items()):
     print(f"{classifier[0]} score : {classifier[1]}")
     plt.bar(i, classifier[1], label=classifier[0])
 plt.legend()
+plt.title("Benchmark of multiple classifier accuracy on given dataset")
 plt.show()

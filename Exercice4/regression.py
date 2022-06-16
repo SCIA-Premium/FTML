@@ -38,7 +38,6 @@ def regression_testing(regressor):
     print("Predicting...")
     scores = cross_val_score(model, inputs, labels, cv=10, scoring="r2")
     print("Scoring...")
-    print(scores)
     print("%0.2f r2_score with a standard deviation of %0.2f" % (scores.mean(), scores.std()))
     score = scores.mean()
     print(f"{regressor[0]} score : {score}")
@@ -51,4 +50,5 @@ for i, regressor in enumerate(regression_score.items()):
     print(f"{regressor[0]} score : {regressor[1]}")
     plt.bar(i, regressor[1], label=regressor[0])
 plt.legend()
+plt.title("Benchmark of multiple regressor r2_score on given dataset")
 plt.show()
