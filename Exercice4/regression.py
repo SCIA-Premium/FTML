@@ -3,7 +3,7 @@ from sklearn import svm
 from sklearn.ensemble import GradientBoostingRegressor
 from sklearn.metrics import r2_score
 
-from sklearn.model_selection import cross_validate, train_test_split, cross_val_score
+from sklearn.model_selection import cross_val_predict, cross_validate, train_test_split, cross_val_score
 from sklearn.linear_model import BayesianRidge, ElasticNet, LinearRegression, SGDRegressor
 from sklearn.preprocessing import LabelEncoder, StandardScaler, MinMaxScaler
 import matplotlib.pyplot as plt
@@ -14,6 +14,8 @@ from xgboost.sklearn import XGBRegressor
 # Loading data
 inputs = np.load('../data/regression/inputs.npy')
 labels = np.load('../data/regression/labels.npy')
+
+labels = np.ravel(labels)
 
 regression_models = {
     "SVR": SVR(),
@@ -34,15 +36,11 @@ def regression_testing(regressor):
     print("Fitting...")
     model.fit(X_train, y_train)
     print("Predicting...")
-    #y_train_pred = model.predict(X_train)
-    y_test_pred = model.predict(X_test)
+    scores = cross_val_score(model, inputs, labels, cv=10, scoring="r2")
     print("Scoring...")
-    #scores = cross_validate(model, X_test, y_test, cv=5, scoring="r2")
-    #print(scores)
-    ##print("%0.2f accuracy with a standard deviation of %0.2f" % (scores.mean(), scores.std()))
-
-    #print("Train score:", r2_score(y_train, y_train_pred))
-    score = r2_score(y_test, y_test_pred)
+    print(scores)
+    print("%0.2f r2_score with a standard deviation of %0.2f" % (scores.mean(), scores.std()))
+    score = scores.mean()
     print(f"{regressor[0]} score : {score}")
     regression_score[regressor[0]] = score
 
