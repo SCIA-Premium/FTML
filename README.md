@@ -10,7 +10,18 @@ The goal of this project is work on the **theoretical fundamentals** of **machin
 We had to work on the **Bayes predictor** and the **Bayes risk** associated to some particular settings. Another part is dedicated to the **OLS estimator**. 
 
 
-## Supervised learning
+## Regression
+
+
+In this part, we had to perform a **regression** on the dataset stored in `data/regression/`.
+* The inputs x are stored in inputs.npy.
+* The labels y are stored in labels.npy
+
+We were free to choose the regression method. In the report, you can retrieve the explanation and the discussion of our approach.
+For instance, you could find :
+— the performance of several methods that we tried.
+— the choice of the hyperparameters and the method to choose them.
+— the optimization method
 
 In a first part, we had to work on a dataset and perform **supervised learning** on it. We decided to work on mobile price **classification**, and try to find some relation between features of a mobile phone (RAM, number of cores, internal memory...) and its selling price. 
 
@@ -27,7 +38,7 @@ The results are the following :
 
 <img src="https://github.com/Pypearl/PTML/blob/main/readme_images/supervised_res.png" alt="Supervised_Visualization">
 
-## Unsupervised learning
+## Classification
 
 In this section, we decided to work on a dataset containing information about 167 **countries**, like the inflation, the net income by person and other **economical parameters**.
 
