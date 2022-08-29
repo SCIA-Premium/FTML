@@ -17,17 +17,11 @@ In this part, we had to perform a **regression** on the dataset stored in `data/
 * The inputs x are stored in inputs.npy.
 * The labels y are stored in labels.npy
 
-We were free to choose the regression method. In the report, you can retrieve the explanation and the discussion of our approach.
+We were free to choose the **regression method**. In the report, you can retrieve the explanation and the discussion of our approach.
 For instance, you could find :
 — the performance of several methods that we tried.
-— the choice of the hyperparameters and the method to choose them.
-— the optimization method
-
-In a first part, we had to work on a dataset and perform **supervised learning** on it. We decided to work on mobile price **classification**, and try to find some relation between features of a mobile phone (RAM, number of cores, internal memory...) and its selling price. 
-
-We found a dataset that instead of giving the actual price of each phone give a price range indicating how high the price is.
-
-We could perform different analysis ont this dataset and try to visualize our data.
+— the choice of the **hyperparameters** and the method to choose them.
+— the **optimization** method
 
 <img src="https://github.com/Pypearl/PTML/blob/main/readme_images/supervised_vis.png" alt="Supervised_Visualization">
 
