@@ -5,17 +5,9 @@
 
 ## Objective
 
-The goal of this project is to apply and demonstrate the use of different **machine learning** methods to real datasets.
+The goal of this project is work on the **theoretical fundamentals** of **machine learning** with different exercices.
 
-## Dataset
-
-We had to choose two **datasets** within the following constraints :
-* several hundreds of lines
-* at least 6 attributes (columns), the first being a unique id, separated by commas
-* we may use some categorical (non quantitative) features.
-* some fields should be correlated
-
-Obvously, we had to tweak the datasets in order to artificially make it possible to apply **analysis** and **visualization** techniques on them.
+We had to work on the **Bayes predictor** and the **Bayes risk** associated to some particular settings. Another part is dedicated to the **OLS estimator**. 
 
 
 ## Supervised learning
