@@ -23,7 +23,9 @@ For instance, you could find :
 — the choice of the **hyperparameters** and the method to choose them.
 — the **optimization** method
 
-<img src="https://github.com/Pypearl/PTML/blob/main/readme_images/supervised_vis.png" alt="Supervised_Visualization">
+Here are the benchmark results :
+
+<img src="https://github.com/Pypearl/FTML/blob/main/readme_images/bench_reg.png" alt="Regression Benchmark">
 
 We decided to test several algorithms with the **sklearn** and **xgboost** library.
 First, we split our data to obtain a train dataset and a test dataset, then we iterate on the **classifier** to fit them and test them. The scoring is here a `R2 score`, which is evaluated by **cross validation**.
