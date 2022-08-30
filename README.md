@@ -30,6 +30,8 @@ Here are the benchmark results :
 
 ## Classification
 
+For this exercice, we had to perform **classification** on a given dataset, with our inputs stored in a `inputs.npy` file and our labels in a `labels.npy` file as in the last part.
+We were again free to choose our **classifier** model and free to implement what we wanted, so we decided to test several algorithms exposed by the **Sklearn Api** and compare them.
 
 ## Authors
 
