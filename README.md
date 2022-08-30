@@ -27,27 +27,8 @@ Here are the benchmark results :
 
 <img src="https://github.com/Pypearl/FTML/blob/main/readme_images/bench_reg.png" alt="Regression Benchmark">
 
-We decided to test several algorithms with the **sklearn** and **xgboost** library.
-First, we split our data to obtain a train dataset and a test dataset, then we iterate on the **classifier** to fit them and test them. The scoring is here a `R2 score`, which is evaluated by **cross validation**.
-
-The results are the following :
-
-<img src="https://github.com/Pypearl/PTML/blob/main/readme_images/supervised_res.png" alt="Supervised_Visualization">
 
 ## Classification
-
-In this section, we decided to work on a dataset containing information about 167 **countries**, like the inflation, the net income by person and other **economical parameters**.
-
-After loading the data we checked that there were no missing and duplicated data. And we decided to visualize it with **seaborn** library.
-
-Our objectives in this unsupervised learning is to decide whether or not a country should receive a **Funding** for Development Aid.
-
-For this **machine learning** part, we decided to use the **K-Means** algorithm from the **sklearn** library. The objective was to apply a **clustering** technique on our data to classify them and to know which one of them should receive a Funding for Development Aid.
-
-We applied the algorithm on two datasets, the first one which was the result of a **PCA**, and the second one which was the result of a **MinMax Scaling**. The most optimized number of cluster is 3, we used the elbow method and the silouhette method from the sklearn library to find it.
-
-
-<img src="https://github.com/Pypearl/PTML/blob/main/readme_images/unsupervised_map.png" alt="Supervised_Visualization">
 
 
 ## Authors
