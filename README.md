@@ -33,6 +33,13 @@ Here are the benchmark results :
 For this exercice, we had to perform **classification** on a given dataset, with our inputs stored in a `inputs.npy` file and our labels in a `labels.npy` file as in the last part.
 We were again free to choose our **classifier** model and free to implement what we wanted, so we decided to test several algorithms exposed by the **Sklearn Api** and compare them.
 
+We decided to split our **dataset** to have a test dataset and a train dataset, to run these algorithms with default **hyper-parameters** and to evaluate them with their accuracy. The objective was to obtain an accuracy superior than 0.85 on the test subset. With our basic implementation, we had great results that were superior
+than 0.85 on several of our tested **classifier**.
+
+Here are the benchmark results :
+
+<img src="https://github.com/Pypearl/FTML/blob/main/readme_images/bench_cla.png" alt="Classification Benchmark">
+
 ## Authors
 
 alexandre.lemonnier\
